@@ -1,6 +1,6 @@
 import './App.css';
 import React from 'react';
-import Header from "Header.js"
+import Header from "./Header.js"
 
 function App() {
   return (
@@ -9,5 +9,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
