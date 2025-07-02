@@ -5,11 +5,11 @@ const Header = () => {
             <img src="LittleLemonLogo1.jpg" width="288" height="288"></img>
         <nav>
             <ul>
-                <li>HOME</li>
-                <li>ABOUT</li>
-                <li>RESERVATIONS</li>
-                <li>ORDER ONLINE</li>
-                <li>LOGIN</li>
+                <li><a href = "jdflkasjfa">HOME</a></li>
+                <li><a href = "jdflkasjfa">ABOUT</a></li>
+                <li><a href = "jdflkasjfa">RESERVATIONS</a></li>
+                <li><a href = "jdflkasjfa">ORDER ONLINE</a></li>
+                <li><a href = "jdflkasjfa">LOGIN</a></li>
             </ul>
         </nav>
         </header>
