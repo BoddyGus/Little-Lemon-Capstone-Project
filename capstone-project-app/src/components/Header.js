@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, HStack, Image, Link } from "@chakra-ui/react";
+import { Layout, Menu, Image } from "antd";
 
 const navLinks = [
   { label: "HOME", href: "#home" },
@@ -9,49 +9,50 @@ const navLinks = [
   { label: "LOGIN", href: "#login" },
 ];
 
-const Header = () => (
-  <Box
-    as="header"
-    position="fixed"
-    top={0}
-    left={0}
-    right={0}
-    bg="#18181b"
-    zIndex={1000}
-  >
-    <Box
-      maxW="1280px"
-      mx="auto"
-      color="white"
-      px={16}
-      py={4}
-      display="flex"
-      alignItems="center"
-      justifyContent="space-between"
+const Header = () => {
+  return (
+    <Layout.Header
+      style={{
+        position: "fixed",
+        top: 0,
+        left: 0,
+        right: 0,
+        zIndex: 1000,
+        background: "#18181b",
+        padding: "0 60px",
+        display: "flex",
+        alignItems: "center",
+      }}
     >
       <Image
         src="LittleLemonLogo1.jpg"
         alt="Little Lemon Logo"
-        boxSize="72px"
-        objectFit="contain"
+        width={72}
+        preview={false}
+        style={{ marginRight: "auto" }}
       />
-      <nav>
-        <HStack spacing={8}>
-          {navLinks.map((link) => (
-            <Link
-              key={link.label}
+      <Menu
+        theme="dark"
+        mode="horizontal"
+        style={{ background: "transparent", minWidth: 0 }}
+        selectable={false}
+      >
+        {navLinks.map((link) => (
+          <Menu.Item key={link.label}>
+            <a
               href={link.href}
-              color="white"
-              fontWeight="bold"
-              _hover={{ color: "yellow.400", textDecoration: "none" }}
+              style={{
+                color: "white",
+                fontWeight: "bold",
+              }}
             >
               {link.label}
-            </Link>
-          ))}
-        </HStack>
-      </nav>
-    </Box>
-  </Box>
-);
+            </a>
+          </Menu.Item>
+        ))}
+      </Menu>
+    </Layout.Header>
+  );
+};
 
 export default Header;
