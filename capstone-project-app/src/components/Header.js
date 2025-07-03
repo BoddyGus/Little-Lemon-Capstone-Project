@@ -18,32 +18,41 @@ const Header = () => {
         left: 0,
         right: 0,
         zIndex: 1000,
-        background: "#18181b",
+        background: "#ffffff",
         padding: "0 60px",
+        margin: "60px",
         display: "flex",
         alignItems: "center",
       }}
     >
-      <Image
-        src="LittleLemonLogo1.jpg"
-        alt="Little Lemon Logo"
-        width={72}
-        preview={false}
-        style={{ marginRight: "auto" }}
-      />
+      <div style={{ flex: "none" }}>
+        <Image
+          src="LittleLemonLogo1.jpg"
+          alt="Little Lemon Logo"
+          width={203}
+          height={68}
+          preview={false}
+        />
+      </div>
       <Menu
-        theme="dark"
+        theme="light"
         mode="horizontal"
-        style={{ background: "transparent", minWidth: 0 }}
+        style={{
+          background: "#ffffff",
+          flex: 1,
+          justifyContent: "flex-end",
+          minWidth: 0,
+          borderBottom: "none",
+          marginLeft: "20px",
+        }}
         selectable={false}
       >
         {navLinks.map((link) => (
-          <Menu.Item key={link.label}>
+          <Menu.Item key={link.label} style={{ fontWeight: "bold" }}>
             <a
               href={link.href}
               style={{
-                color: "white",
-                fontWeight: "bold",
+                color: "#000000",
               }}
             >
               {link.label}
