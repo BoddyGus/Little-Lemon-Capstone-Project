@@ -1,5 +1,7 @@
-import React from "react";
-import { Layout, Menu, Image, Row, Col } from "antd";
+import React, { useState } from "react";
+import { Layout, Menu, Image, Row, Col, Drawer, Button } from "antd";
+import { MenuOutlined } from "@ant-design/icons";
+import "../components_styles/Header.css";
 
 const navLinks = [
   { label: "HOME", href: "#home" },
@@ -9,55 +11,75 @@ const navLinks = [
   { label: "LOGIN", href: "#login" },
 ];
 
-const Header = () => (
-  <Layout.Header
-    style={{
-      position: "fixed",
-      top: 0,
-      left: 0,
-      right: 0,
-      zIndex: 1000,
-      background: "#ffffff",
-      padding: "0 60px",
-    }}
-  >
-    <Row gutter={20} columns={12}>
-      <Col span={4} offset={4}>
-        <Image
-          src="LittleLemonLogo1.jpg"
-          alt="Little Lemon Logo"
-          preview={false}
-        />
-      </Col>
-      <Col span={12} offset={1}>
+const Header = () => {
+  const [drawerVisible, setDrawerVisible] = useState(false);
+
+  return (
+    <Layout.Header className="header">
+      <Row className="header__row">
+        <Col xs={24} md={4}>
+          <Image
+            src="LittleLemonLogo1.jpg"
+            alt="Little Lemon Logo"
+            preview={false}
+            className="header__logo"
+          />
+        </Col>
+        <Col xs={0} md={16}>
+          <Menu
+            theme="light"
+            mode="horizontal"
+            className="header__menu"
+            selectable={false}
+          >
+            {navLinks.map((link) => (
+              <Menu.Item key={link.label} className="header__menu-item">
+                <a href={link.href} className="header__link">
+                  {link.label}
+                </a>
+              </Menu.Item>
+            ))}
+          </Menu>
+        </Col>
+        <Col xs={24} md={0} className="header__mobile-menu-btn">
+          <Button
+            type="text"
+            icon={<MenuOutlined style={{ fontSize: 28 }} />}
+            onClick={() => setDrawerVisible(true)}
+          />
+        </Col>
+      </Row>
+      <Drawer
+        title={
+          <Image
+            src="LittleLemonLogo1.jpg"
+            alt="Little Lemon Logo"
+            preview={false}
+            className="header__logo"
+          />
+        }
+        placement="right"
+        onClose={() => setDrawerVisible(false)}
+        open={drawerVisible}
+        bodyStyle={{ padding: 0 }}
+      >
         <Menu
-          theme="light"
-          mode="horizontal"
-          style={{
-            background: "#ffffff",
-            borderBottom: "none",
-          }}
+          mode="vertical"
           selectable={false}
+          style={{ border: "none" }}
+          onClick={() => setDrawerVisible(false)}
         >
           {navLinks.map((link) => (
-            <Menu.Item key={link.label} style={{ fontWeight: "bold" }}>
-              <a
-                href={link.href}
-                style={{
-                  color: "#000000",
-                  fontWeight: "bold",
-                  fontFamily: "Karla, sans-serif",
-                  fontSize: 20,
-                }}
-              >
+            <Menu.Item key={link.label} className="header__menu-item">
+              <a href={link.href} className="header__link">
                 {link.label}
               </a>
             </Menu.Item>
           ))}
         </Menu>
-      </Col>
-    </Row>
-  </Layout.Header>
-);
+      </Drawer>
+    </Layout.Header>
+  );
+};
 
 export default Header;
