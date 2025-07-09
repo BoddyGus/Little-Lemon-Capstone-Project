@@ -16,6 +16,9 @@
   justify-content: space-between;
 }
 
+.header__menu-icon {
+  font-size: 28px;
+}
 
 .header__logo {
   height: auto;

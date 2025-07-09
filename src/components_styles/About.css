@@ -1,0 +1,51 @@
+.about {
+  padding: 60px 0;
+  background: #fff;
+}
+
+.about__title {
+  font-family: "Markazi Text", serif;
+  font-size: 64px !important;
+}
+
+.about__subtitle {
+  font-family: "Markazi Text", serif;
+  font-size: 40px !important;
+}
+
+.about__description {
+  font-family: "Karla", sans-serif;
+  font-size: 18px;
+  margin-top: 24px;
+}
+
+.about__images-col {
+  position: relative;
+  min-height: 320px;
+}
+.about__images-wrapper {
+  position: relative;
+  width: 340px;
+  height: 440px; /* Increased height */
+  margin: 0 auto;
+  overflow: visible; /* Ensure images are not clipped */
+}
+
+.about__image {
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  position: absolute;
+  transition: box-shadow 0.2s;
+}
+
+.about__image--back {
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.about__image--front {
+  bottom: 0;
+  right: 0;
+  z-index: 2;
+}

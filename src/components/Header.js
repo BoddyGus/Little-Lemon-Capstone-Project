@@ -44,7 +44,7 @@ const Header = () => {
         <Col xs={24} md={0} className="header__mobile-menu-btn">
           <Button
             type="text"
-            icon={<MenuOutlined style={{ fontSize: 28 }} />}
+            icon={<MenuOutlined className="header__menu-icon" />}
             onClick={() => setDrawerVisible(true)}
           />
         </Col>
