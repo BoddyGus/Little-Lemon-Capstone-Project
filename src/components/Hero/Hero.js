@@ -1,6 +1,6 @@
 import React from "react";
 import { Row, Col, Typography, Image, Button } from "antd";
-import "../components_styles/Hero.css";
+import "./Hero.css";
 
 const { Title, Paragraph } = Typography;
 

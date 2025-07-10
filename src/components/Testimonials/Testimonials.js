@@ -1,6 +1,6 @@
 import React from "react";
 import { Row, Col, Card, Typography, Avatar, Rate } from "antd";
-import "../components_styles/Testimonials.css";
+import "./Testimonials.css";
 
 const { Title, Text, Paragraph } = Typography;
 
