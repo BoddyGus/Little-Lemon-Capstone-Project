@@ -1,28 +1,32 @@
 import React from "react";
 import { Row, Col, Typography, Image, Button } from "antd";
+import "../components_styles/Hero.css";
 
 const { Title, Paragraph } = Typography;
 
 const Hero = () => (
-  <div style={{ background: "#495E57", padding: "60px 0" }}>
-    <Row gutter={20} columns={12}>
-      <Col xs={16} md={8} offset={4}>
-        <Title level={1} style={{ color: "#F4CE14", fontFamily: "Markazi Text, serif", fontSize: 64, marginTop: 20,  marginBottom: 20}}>Little Lemon</Title>
-        <Title level={3} style={{ color: "#FFFEFE", fontFamily: "Markazi Text, serif", fontSize: 40}}>Chicago</Title>
-        <Paragraph style={{color: "#000", fontFamily: "Karla, sans-serif", fontSize: 16}}>
-           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  <div className="hero">
+    <Row className="hero__row" align="middle" justify="center">
+      <Col xs={24} md={14} lg={10} className="hero__content">
+        <Title level={1} className="hero__title">Little Lemon</Title>
+        <Title level={3} className="hero__subtitle">Chicago</Title>
+        <Paragraph className="hero__paragraph">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </Paragraph>
-        <Button type="primary" size="large" href="#reservations" style={{ background: "#F4CE14", color: "#000", borderRadius: 8, marginTop: 70}}>
+        <Button
+          type="primary"
+          size="large"
+          href="#reservations"
+          className="hero__button"
+        >
           Reserve a Table
         </Button>
       </Col>
-      <Col xs={8} md={4} offset={1} style={{ textAlign: "right" }}>
+      <Col xs={0} md={8} lg={6} className="hero__image-col">
         <Image
           src="Photo1.jpg"
-          width={400}
-          height={400}
           preview={false}
-          style={{ borderRadius: 8, marginTop: 20}}
+          className="hero__image"
         />
       </Col>
     </Row>

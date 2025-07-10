@@ -1,5 +1,6 @@
 import React from "react";
 import { Row, Col, Card, Typography, Avatar, Rate } from "antd";
+import "../components_styles/Testimonials.css";
 
 const { Title, Text, Paragraph } = Typography;
 
@@ -31,22 +32,20 @@ const testimonials = [
 ];
 
 const Testimonials = () => (
-  <div style={{ background: "#495E57", padding: "60px 0" }}>
-    <Title level={2} style={{ textAlign: "center", marginBottom: 40, color: "#FFFEFE"}}>
+  <div className="testimonials">
+    <Title level={2} className="testimonials__title">
       Testimonials
     </Title>
     <Row gutter={24} justify="center">
-      {testimonials.map((t, idx) => (
+      {testimonials.map((t) => (
         <Col xs={24} sm={12} md={6} key={t.name}>
-          <Card
-            style={{ borderRadius: 12, minHeight: 260, marginBottom: 24 }}
-          >
-            <div style={{ display: "flex", alignItems: "center", marginBottom: 8 }}>
-              <Avatar src={t.avatar} size={48} style={{ marginRight: 12 }} />
-              <Text strong style={{ fontSize: 16 }}>{t.name}</Text>
+          <Card className="testimonials__card">
+            <div className="testimonials__header">
+              <Avatar src={t.avatar} size={48} className="testimonials__avatar" />
+              <Text strong className="testimonials__name">{t.name}</Text>
             </div>
-            <Rate disabled defaultValue={t.rating} style={{ fontSize: 18, marginBottom: 12 }} />
-            <Paragraph style={{ marginTop: 12 }}>{t.review}</Paragraph>
+            <Rate disabled defaultValue={t.rating} className="testimonials__rate" />
+            <Paragraph className="testimonials__review">{t.review}</Paragraph>
           </Card>
         </Col>
       ))}
