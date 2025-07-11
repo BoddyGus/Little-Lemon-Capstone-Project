@@ -1,6 +1,6 @@
 import React from "react";
 import { Row, Col, Typography, Image } from "antd";
-import "../components_styles/About.css";
+import "./About.css";
 
 const { Title, Paragraph } = Typography;
 

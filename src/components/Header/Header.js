@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Layout, Menu, Image, Row, Col, Drawer, Button } from "antd";
 import { MenuOutlined } from "@ant-design/icons";
-import "../components_styles/Header.css";
+import "./Header.css";
 
 const navLinks = [
   { label: "HOME", href: "#home" },

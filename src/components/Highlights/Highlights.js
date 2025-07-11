@@ -1,6 +1,6 @@
 import React from "react";
 import { Row, Col, Card, Typography, Button, Image } from "antd";
-import "../components_styles/Highlights.css";
+import "./Highlights.css";
 const { Title, Text, Paragraph } = Typography;
 
 const dishes = [

@@ -5,9 +5,30 @@ import {
   InstagramFilled,
   YoutubeFilled,
 } from "@ant-design/icons";
-import "../components_styles/Footer.css";
+import "./Footer.css";
 
-const { Title, Text, Paragraph } = Typography;
+const { Title, Paragraph } = Typography;
+
+const navLinks = [
+  { label: "Home", href: "#home" },
+  { label: "About", href: "#about" },
+  { label: "Menu", href: "#menu" },
+  { label: "Reservations", href: "#reservations" },
+  { label: "Order Online", href: "#order-online" },
+  { label: "Login", href: "#login" },
+];
+
+const hours = [
+  "Mon - Fri: 8am - 10pm",
+  "Sat & Sun: 10am - 4pm",
+  "Online ordering: 11am - 9pm",
+];
+
+const addressLines = [
+  "123 Main St, Chicago, IL 60601",
+  "info@littlelemon.com",
+  "(312) 555-1234",
+];
 
 const Footer = () => (
   <div className="footer">
@@ -31,24 +52,27 @@ const Footer = () => (
         <Row gutter={32}>
           <Col xs={24} sm={8}>
             <Title level={5} className="footer__section-title">NAVIGATION</Title>
-            <Text className="footer__link">Home</Text>
-            <Text className="footer__link">About</Text>
-            <Text className="footer__link">Menu</Text>
-            <Text className="footer__link">Reservations</Text>
-            <Text className="footer__link">Order online</Text>
-            <Text className="footer__link">Login</Text>
+            <ul className="footer__nav-list">
+              {navLinks.map(({ label, href }) => (
+                <li key={href} className="footer__nav-item">
+                  <a href={href} className="footer__link">{label}</a>
+                </li>
+              ))}
+            </ul>
           </Col>
           <Col xs={24} sm={8}>
             <Title level={5} className="footer__section-title">HOURS</Title>
-            <Text className="footer__link">Mon - Fri: 8am - 10pm</Text>
-            <Text className="footer__link">Sat & Sun: 10am - 4pm</Text>
-            <Text className="footer__link">Online ordering: 11am - 9pm</Text>
+            {hours.map((line, idx) => (
+              <div className="footer__text" key={idx}>{line}</div>
+            ))}
           </Col>
           <Col xs={24} sm={8}>
             <Title level={5} className="footer__section-title">ADDRESS</Title>
-            <Text className="footer__link">123 Main St, Chicago, IL 60601</Text>
-            <Text className="footer__link">info@littlelemon.com</Text>
-            <Text className="footer__link">(312) 555-1234</Text>
+            <address style={{ fontStyle: "normal" }}>
+              {addressLines.map((line, idx) => (
+                <div className="footer__text" key={idx}>{line}</div>
+              ))}
+            </address>
           </Col>
         </Row>
       </Col>
