@@ -1,11 +1,12 @@
 import React from 'react';
 import BookingForm from '../BookingForm/BookingForm';
+import './BookingPage.css';
 
-function BookingPage() {
+function BookingPage({ availableTimes, dispatch }) {
   return (
-    <div>
+    <div className="booking-page">
       <h1>Reserve a Table</h1>
-      <BookingForm />
+      <BookingForm availableTimes={availableTimes} dispatch={dispatch} />
     </div>
   );
 }

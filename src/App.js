@@ -5,18 +5,20 @@ import Highlights from "./components/Highlights/Highlights.js";
 import Testimonials from './components/Testimonials/Testimonials.js';
 import About from './components/About/About.js';
 import Footer from './components/Footer/Footer.js';
+import Main from './components/Main/Main.js';
 import 'antd/dist/reset.css';
 
 function App() {
   return (
-    <main>
+    <div>
       <Header />
       <Hero />
       <Highlights />
       <Testimonials />
       <About />
+      <Main />
       <Footer />
-    </main>
+    </div>
   );
 }
 

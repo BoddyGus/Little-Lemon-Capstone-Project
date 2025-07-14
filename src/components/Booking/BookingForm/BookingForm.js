@@ -1,72 +1,126 @@
 import React, { useState } from 'react';
+import { Row, Col, Space, Flex, Form, Select, InputNumber, Button, DatePicker } from 'antd';
 import './BookingForm.css';
 
-function BookingForm() {
+const { Option } = Select;
 
+function BookingForm({ availableTimes, dispatch }) {
   const [date, setDate] = useState('');
   const [time, setTime] = useState('');
   const [guests, setGuests] = useState(1);
   const [occasion, setOccasion] = useState('Birthday');
-  const [availableTimes, setAvailableTimes] = useState([
-    '17:00',
-    '18:00',
-    '19:00',
-    '20:00',
-    '21:00',
-    '22:00'
-  ]);
+
+  const handleDateChange = (dateString) => {
+    setDate(dateString);
+    dispatch({ type: 'UPDATE_TIMES', date: dateString });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log('Form submitted with:', {
+      date,
+      time,
+      guests,
+      occasion
+    });
+  };
 
   return (
-    <form className="booking-form">
-      <label htmlFor="res-date" className="booking-form__label">Choose date</label>
-      <input
-        type="date"
-        id="res-date"
-        className="booking-form__input"
-        value={date}
-        onChange={(e) => setDate(e.target.value)}
-      />
+    <div className="booking-form">
+      <Space direction="vertical" size="large" style={{ width: '100%' }}>
+        <Form onFinish={handleSubmit} layout="vertical">
+          <Row gutter={[16, 16]}>
+            <Col xs={24} sm={12} md={12}>
+              <Form.Item
+                label="Choose date"
+                name="date"
+                rules={[{ required: true, message: 'Please select a date!' }]}
+              >
+                <DatePicker
+                  style={{ width: '100%' }}
+                  onChange={(date, dateString) => handleDateChange(dateString)}
+                  placeholder="Select date"
+                />
+              </Form.Item>
+            </Col>
 
-      <label htmlFor="res-time" className="booking-form__label">Choose time</label>
-      <select
-        id="res-time"
-        className="booking-form__select"
-        value={time}
-        onChange={(e) => setTime(e.target.value)}
-      >
-        <option value="">Select a time</option>
-        {availableTimes.map((availableTime) => (
-          <option key={availableTime} value={availableTime}>
-            {availableTime}
-          </option>
-        ))}
-      </select>
+            <Col xs={24} sm={12} md={12}>
+              <Form.Item
+                label="Choose time"
+                name="time"
+                rules={[{ required: true, message: 'Please select a time!' }]}
+              >
+                <Select
+                  placeholder="Select a time"
+                  value={time}
+                  onChange={(value) => setTime(value)}
+                  style={{ width: '100%' }}
+                >
+                  {availableTimes.map((availableTime) => (
+                    <Option key={availableTime} value={availableTime}>
+                      {availableTime}
+                    </Option>
+                  ))}
+                </Select>
+              </Form.Item>
+            </Col>
+          </Row>
 
-      <label htmlFor="guests" className="booking-form__label">Number of guests</label>
-      <input
-        type="number"
-        placeholder="1"
-        min="1"
-        max="10"
-        id="guests"
-        className="booking-form__input"
-        value={guests}
-        onChange={(e) => setGuests(parseInt(e.target.value))}
-      />
+          <Row gutter={[16, 16]}>
+            <Col xs={24} sm={12} md={12}>
+              <Form.Item
+                label="Number of guests"
+                name="guests"
+                rules={[{ required: true, message: 'Please enter number of guests!' }]}
+              >
+                <InputNumber
+                  min={1}
+                  max={10}
+                  value={guests}
+                  onChange={(value) => setGuests(value)}
+                  style={{ width: '100%' }}
+                  placeholder="1"
+                />
+              </Form.Item>
+            </Col>
 
-      <label htmlFor="occasion" className="booking-form__label">Occasion</label>
-      <select
-        id="occasion"
-        className="booking-form__select"
-        value={occasion}
-        onChange={(e) => setOccasion(e.target.value)}
-      >
-        <option value="Birthday">Birthday</option>
-        <option value="Anniversary">Anniversary</option>
-      </select>
+            <Col xs={24} sm={12} md={12}>
+              <Form.Item
+                label="Occasion"
+                name="occasion"
+                initialValue="Birthday"
+              >
+                <Select
+                  value={occasion}
+                  onChange={(value) => setOccasion(value)}
+                  style={{ width: '100%' }}
+                >
+                  <Option value="Birthday">Birthday</Option>
+                  <Option value="Anniversary">Anniversary</Option>
+                  <Option value="Engagement">Engagement</Option>
+                  <Option value="Graduation">Graduation</Option>
+                </Select>
+              </Form.Item>
+            </Col>
+          </Row>
 
-      <input type="submit" value="Make Your reservation" className="booking-form__submit" />
-    </form>
+          <Row justify="center" className="booking-form__submit-row">
+            <Col>
+              <Flex justify="center">
+                <Button
+                  type="primary"
+                  htmlType="submit"
+                  size="large"
+                  className="booking-form__submit-button"
+                >
+                  Make Your Reservation
+                </Button>
+              </Flex>
+            </Col>
+          </Row>
+        </Form>
+      </Space>
+    </div>
   );
 }
 
