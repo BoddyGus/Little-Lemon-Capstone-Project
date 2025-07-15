@@ -1,6 +1,6 @@
 import React, { useReducer } from 'react';
 import BookingPage from '../Booking/BookingPage/BookingPage';
-function initializeTimes() {
+export function initializeTimes() {
   return [
     '17:00',
     '18:00',
@@ -11,7 +11,7 @@ function initializeTimes() {
   ];
 }
 
-function updateTimes(state, action) {
+export function updateTimes(state, action) {
   switch (action.type) {
     case 'UPDATE_TIMES':
       return initializeTimes();
