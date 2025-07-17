@@ -1,10 +1,28 @@
 import React, { useState} from 'react';
 import { Row, Col, Space, Flex, Form, Select, InputNumber, Button, DatePicker, message } from 'antd';
 import './BookingForm.css';
+import dayjs from 'dayjs';
 
 const { Option } = Select;
 
+const SUCCESS_MESSAGE = 'Reservation submitted successfully!';
+const ERROR_MESSAGE = 'Failed to submit reservation. Please try again.';
+const GENERAL_ERROR_MESSAGE = 'An error occurred while submitting your reservation. Please try again.';
+
+function required(fieldName) {
+  return { required: true, message: `Please select a ${fieldName}!` };
+}
+
+function requiredNumber(fieldName) {
+  return { required: true, message: `Please enter ${fieldName}!` };
+}
+
 function BookingForm({ availableTimes, dispatch, submitForm }) {
+  const INITIAL_VALUES = {
+    guests: 1,
+    occasion: 'Birthday'
+  };
+
   const [date, setDate] = useState('');
   const [time, setTime] = useState('');
   const [guests, setGuests] = useState(1);
@@ -20,24 +38,21 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
   const handleSubmit = async (values) => {
     setLoading(true);
 
-    const formData = {
-      date,
-      time,
-      guests,
-      occasion
-    };
-
     try {
+      const formattedValues = {
+      ...values,
+      date: values.date ? dayjs(values.date).format('YYYY-MM-DD') : ''
+     };
 
-      const success = submitForm(formData);
+      const success = submitForm(formattedValues);
 
       if (success) {
-        message.success('Reservation submitted successfully!');
+        message.success(SUCCESS_MESSAGE);
       } else {
-        message.error('Failed to submit reservation. Please try again.');
+        message.error(ERROR_MESSAGE);
       }
     } catch (error) {
-      message.error('An error occurred while submitting your reservation. Please try again.');
+      message.error(GENERAL_ERROR_MESSAGE);
     } finally {
       setLoading(false);
     }
@@ -49,17 +64,14 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
         <Form
           onFinish={handleSubmit}
           layout="vertical"
-          initialValues={{
-            guests: 1,
-            occasion: 'Birthday'
-          }}
+          initialValues={INITIAL_VALUES}
         >
           <Row gutter={[16, 16]}>
             <Col xs={24} sm={12} md={12}>
               <Form.Item
                 label="Choose date"
                 name="date"
-                rules={[{ required: true, message: 'Please select a date!' }]}
+                rules={[required('date')]}
               >
                 <DatePicker
                   style={{ width: '100%' }}
@@ -76,7 +88,7 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
               <Form.Item
                 label="Choose time"
                 name="time"
-                rules={[{ required: true, message: 'Please select a time!' }]}
+                rules={[required('time')]}
               >
                 <Select
                   placeholder="Select a time"
@@ -103,7 +115,7 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
               <Form.Item
                 label="Number of guests"
                 name="guests"
-                rules={[{ required: true, message: 'Please enter number of guests!' }]}
+                rules={[requiredNumber('number of guests')]}
               >
                 <InputNumber
                   min={1}
