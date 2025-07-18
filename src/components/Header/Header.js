@@ -16,10 +16,10 @@ const Header = () => {
   const [drawerVisible, setDrawerVisible] = useState(false);
 
   return (
-    <Layout.Header className="header">
+    <Layout.Header className="header" role="banner">
       <Row className="header__row">
         <Col xs={24} md={4}>
-          <Link to="/">
+          <Link to="/" aria-label="Little Lemon Home">
             <Image
               src="LittleLemonLogo1.jpg"
               alt="Little Lemon Logo"
@@ -34,15 +34,25 @@ const Header = () => {
             mode="horizontal"
             className="header__menu"
             selectable={false}
+            role="navigation"
+            aria-label="Main navigation"
           >
             {navLinks.map((link) => (
               <Menu.Item key={link.label} className="header__menu-item">
                 {link.href.startsWith('/') ? (
-                  <Link to={link.href} className="header__link">
+                  <Link
+                    to={link.href}
+                    className="header__link"
+                    aria-label={`Navigate to ${link.label.toLowerCase()}`}
+                  >
                     {link.label}
                   </Link>
                 ) : (
-                  <a href={link.href} className="header__link">
+                  <a
+                    href={link.href}
+                    className="header__link"
+                    aria-label={`Navigate to ${link.label.toLowerCase()}`}
+                  >
                     {link.label}
                   </a>
                 )}
@@ -55,12 +65,15 @@ const Header = () => {
             type="text"
             icon={<MenuOutlined className="header__menu-icon" />}
             onClick={() => setDrawerVisible(true)}
+            aria-label="On Click"
+            aria-expanded={drawerVisible}
+            aria-controls="mobile-navigation-drawer"
           />
         </Col>
       </Row>
       <Drawer
         title={
-          <Link to="/">
+          <Link to="/" aria-label="Little Lemon Home">
             <Image
               src="LittleLemonLogo1.jpg"
               alt="Little Lemon Logo"
@@ -73,21 +86,33 @@ const Header = () => {
         onClose={() => setDrawerVisible(false)}
         open={drawerVisible}
         bodyStyle={{ padding: 0 }}
+        id="mobile-navigation-drawer"
+        aria-label="Mobile navigation menu"
       >
         <Menu
           mode="vertical"
           selectable={false}
           style={{ border: "none" }}
           onClick={() => setDrawerVisible(false)}
+          role="navigation"
+          aria-label="Mobile navigation"
         >
           {navLinks.map((link) => (
             <Menu.Item key={link.label} className="header__menu-item">
               {link.href.startsWith('/') ? (
-                <Link to={link.href} className="header__link">
+                <Link
+                  to={link.href}
+                  className="header__link"
+                  aria-label={`Navigate to ${link.label.toLowerCase()}`}
+                >
                   {link.label}
                 </Link>
               ) : (
-                <a href={link.href} className="header__link">
+                <a
+                  href={link.href}
+                  className="header__link"
+                  aria-label={`Navigate to ${link.label.toLowerCase()}`}
+                >
                   {link.label}
                 </a>
               )}

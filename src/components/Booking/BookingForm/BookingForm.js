@@ -72,11 +72,14 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
                 label="Choose date"
                 name="date"
                 rules={[required('date')]}
+                role="form"
+                aria-label="Reservation booking form"
               >
                 <DatePicker
                   style={{ width: '100%' }}
                   onChange={handleDateChange}
                   placeholder="Select date"
+                  aria-label="Choose reservation date"
                   disabledDate={(current) => {
                     return current && current < new Date().setHours(0, 0, 0, 0);
                   }}
@@ -93,6 +96,7 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
                 <Select
                   placeholder="Select a time"
                   value={time}
+                  aria-label="Choose reservation time"
                   onChange={(value) => {
                     console.log('Time selected:', value);
                     setTime(value);
@@ -123,6 +127,7 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
                   value={guests}
                   onChange={(value) => setGuests(value)}
                   style={{ width: '100%' }}
+                  aria-label="Number of guests"
                   placeholder="1"
                 />
               </Form.Item>
@@ -137,6 +142,7 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
                 <Select
                   value={occasion}
                   onChange={(value) => setOccasion(value)}
+                  aria-label="Select occasion type"
                   style={{ width: '100%' }}
                 >
                   <Option value="Birthday">Birthday</Option>

@@ -6,7 +6,7 @@ import "./Hero.css";
 const { Title, Paragraph } = Typography;
 
 const Hero = () => (
-  <div className="hero">
+  <section className="hero" role="banner" aria-label="Hero section">
     <Row className="hero__row" align="middle" justify="center">
       <Col xs={24} md={14} lg={10} className="hero__content">
         <Title level={1} className="hero__title">Little Lemon</Title>
@@ -19,6 +19,7 @@ const Hero = () => (
             type="primary"
             size="large"
             className="hero__button"
+            aria-label="On Click"
           >
             Reserve a Table
           </Button>
@@ -29,10 +30,11 @@ const Hero = () => (
           src="Photo1.jpg"
           preview={false}
           className="hero__image"
+          alt="Restaurant interior showing dining area"
         />
       </Col>
     </Row>
-  </div>
+  </section>
 );
 
 export default Hero;
