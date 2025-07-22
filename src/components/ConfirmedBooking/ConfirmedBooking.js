@@ -41,24 +41,28 @@ function ConfirmedBooking() {
               </Title>
               <Row gutter={[16, 16]}>
                 <Col span={12}>
-                  <Text strong>Date:</Text>
-                  <br />
-                  <Text>{reservation.date}</Text>
+                  <div className="confirmed-booking__detail-item">
+                    <Text strong className="confirmed-booking__detail-label">Date:</Text>
+                    <Text className="confirmed-booking__detail-value">{reservation.date}</Text>
+                  </div>
                 </Col>
                 <Col span={12}>
-                  <Text strong>Time:</Text>
-                  <br />
-                  <Text>{reservation.time}</Text>
+                  <div className="confirmed-booking__detail-item">
+                    <Text strong className="confirmed-booking__detail-label">Time:</Text>
+                    <Text className="confirmed-booking__detail-value">{reservation.time}</Text>
+                  </div>
                 </Col>
                 <Col span={12}>
-                  <Text strong>Guests:</Text>
-                  <br />
-                  <Text>{reservation.guests}</Text>
+                  <div className="confirmed-booking__detail-item">
+                    <Text strong className="confirmed-booking__detail-label">Guests:</Text>
+                    <Text className="confirmed-booking__detail-value">{reservation.guests}</Text>
+                  </div>
                 </Col>
                 <Col span={12}>
-                  <Text strong>Occasion:</Text>
-                  <br />
-                  <Text>{reservation.occasion}</Text>
+                  <div className="confirmed-booking__detail-item">
+                    <Text strong className="confirmed-booking__detail-label">Occasion:</Text>
+                    <Text className="confirmed-booking__detail-value">{reservation.occasion}</Text>
+                  </div>
                 </Col>
               </Row>
             </Card>
