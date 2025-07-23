@@ -1,0 +1,120 @@
+.hero {
+  --hero-padding: var(--spacing-xxl) var(--spacing-lg) var(--spacing-xl) var(--spacing-lg);
+  --hero-max-width: 1200px;
+  --hero-content-padding: 0 var(--spacing-lg);
+  --hero-title-margin: 20px;
+  --hero-button-margin-top: 70px;
+  --hero-image-max-width: 320px;
+  --hero-image-border-radius: var(--border-radius-sm);
+
+  background: var(--color-secondary);
+  padding: var(--hero-padding);
+}
+
+.hero__row {
+  max-width: var(--hero-max-width);
+  margin: 0 auto;
+}
+
+.hero__content {
+  padding: var(--hero-content-padding);
+}
+
+
+.hero .hero__title {
+  color: var(--color-primary);
+  font-family: var(--font-primary);
+  font-size: 64px;
+  margin-top: var(--hero-title-margin);
+  margin-bottom: var(--hero-title-margin);
+}
+
+.hero .hero__subtitle {
+  color: var(--color-white);
+  font-family: var(--font-primary);
+  font-size: 40px;
+}
+
+.hero .hero__paragraph {
+  color: var(--color-white);
+  font-family: var(--font-secondary);
+  font-size: 16px;
+}
+
+.hero .ant-btn.hero__button {
+  background: var(--color-primary);
+  color: var(--color-black);
+  border-radius: var(--hero-image-border-radius);
+  margin-top: var(--hero-button-margin-top);
+  border: none;
+  font-weight: var(--font-weight-semibold);
+}
+
+.hero .ant-btn.hero__button:hover,
+.hero .ant-btn.hero__button:focus {
+  background: var(--color-primary-hover);
+  color: var(--color-black);
+}
+
+.hero__image-col {
+  text-align: right;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+
+.hero__image {
+  border-radius: var(--hero-image-border-radius);
+  margin-top: var(--hero-title-margin);
+  max-width: var(--hero-image-max-width);
+  width: 100%;
+  height: auto;
+  box-shadow: var(--shadow-light);
+}
+
+@media (max-width: 991px) {
+  .hero {
+    --hero-image-max-width: 220px;
+    --hero-button-margin-top: 40px;
+  }
+
+  .hero .hero__title {
+    font-size: 48px;
+  }
+
+  .hero .hero__subtitle {
+    font-size: 32px;
+  }
+
+  .hero__image {
+    max-width: var(--hero-image-max-width);
+  }
+}
+
+@media (max-width: 767px) {
+  .hero {
+    --hero-content-padding: 0 var(--spacing-sm);
+    padding: var(--spacing-xl) 0;
+  }
+
+  .hero__row {
+    flex-direction: column;
+  }
+
+  .hero__content {
+    text-align: center;
+    padding: var(--hero-content-padding);
+  }
+
+  .hero__image-col {
+    display: none;
+  }
+
+  .hero .hero__title {
+    font-size: 36px;
+  }
+
+  .hero .hero__subtitle {
+    font-size: 24px;
+  }
+}

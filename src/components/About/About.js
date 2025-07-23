@@ -1,14 +1,18 @@
 import React from "react";
 import { Row, Col, Typography, Image } from "antd";
-import "../components_styles/About.css";
+import "./About.css";
 
 const { Title, Paragraph } = Typography;
 
 const About = () => (
-  <div className="about">
+  <section
+    className="about"
+    aria-labelledby="about-title"
+    aria-label="About Little Lemon restaurant"
+  >
     <Row align="middle" gutter={40}>
       <Col xs={24} md={12}>
-        <Title level={1} className="about__title">
+        <Title level={1} className="about__title" id="about-title">
           Little Lemon
         </Title>
         <Title level={3} className="about__subtitle">
@@ -19,10 +23,14 @@ const About = () => (
         </Paragraph>
       </Col>
       <Col xs={24} md={12} className="about__images-col">
-        <div className="about__images-wrapper">
+        <div
+          className="about__images-wrapper"
+          role="img"
+          aria-label="Restaurant atmosphere photos"
+        >
           <Image
             src="ds.jpg"
-            alt="Little Lemon 1"
+            alt="Little Lemon restaurant interior showing dining atmosphere"
             width={220}
             height={220}
             className="about__image about__image--front"
@@ -30,7 +38,7 @@ const About = () => (
           />
           <Image
             src="dss.jpg"
-            alt="Little Lemon 2"
+            alt="Little Lemon restaurant kitchen and food preparation"
             width={220}
             height={220}
             className="about__image about__image--back"
@@ -39,7 +47,7 @@ const About = () => (
         </div>
       </Col>
     </Row>
-  </div>
+  </section>
 );
 
 export default About;

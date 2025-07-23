@@ -1,0 +1,128 @@
+.confirmed-booking {
+  --confirmed-booking-padding: var(--spacing-lg);
+  --confirmed-booking-card-max-width: 600px;
+  --confirmed-booking-card-padding: var(--spacing-lg);
+  --confirmed-booking-icon-size: 64px;
+  --confirmed-booking-icon-margin: var(--spacing-md);
+  --confirmed-booking-title-margin: var(--spacing-md);
+  --confirmed-booking-message-size: 18px;
+  --confirmed-booking-message-margin: var(--spacing-lg);
+  --confirmed-booking-details-margin: var(--spacing-lg) 0;
+  --confirmed-booking-details-title-size: 20px;
+  --confirmed-booking-details-title-margin: var(--spacing-md);
+  --confirmed-booking-info-size: 14px;
+  --confirmed-booking-info-margin: var(--spacing-lg);
+  --confirmed-booking-button-min-width: 160px;
+
+  min-height: 100vh;
+  background: var(--color-background-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--confirmed-booking-padding);
+}
+
+.confirmed-booking__card {
+  max-width: var(--confirmed-booking-card-max-width);
+  width: 100%;
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-medium);
+  padding: var(--confirmed-booking-card-padding);
+  background: var(--color-background);
+}
+
+.confirmed-booking__icon {
+  font-size: var(--confirmed-booking-icon-size);
+  color: #52c41a;
+  margin-bottom: var(--confirmed-booking-icon-margin);
+}
+
+.confirmed-booking__title {
+  color: var(--color-secondary) !important;
+  margin-bottom: var(--confirmed-booking-title-margin) !important;
+  font-family: var(--font-primary) !important;
+}
+
+.confirmed-booking__message {
+  font-size: var(--confirmed-booking-message-size);
+  color: var(--color-text-light);
+  margin-bottom: var(--confirmed-booking-message-margin);
+  font-family: var(--font-secondary);
+  line-height: 1.5;
+}
+
+.confirmed-booking__details {
+  background: var(--color-background-alt);
+  border: 1px solid var(--color-border);
+  margin: var(--confirmed-booking-details-margin);
+  border-radius: var(--border-radius-sm);
+}
+
+.confirmed-booking__details-title {
+  color: var(--color-secondary) !important;
+  margin-bottom: var(--confirmed-booking-details-title-margin) !important;
+  font-size: var(--confirmed-booking-details-title-size) !important;
+  font-family: var(--font-primary) !important;
+}
+
+.confirmed-booking__detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.confirmed-booking__detail-label {
+  color: var(--color-text) !important;
+  font-family: var(--font-secondary) !important;
+  font-weight: var(--font-weight-semibold) !important;
+}
+
+.confirmed-booking__detail-value {
+  color: var(--color-text-light) !important;
+  font-family: var(--font-secondary) !important;
+}
+
+.confirmed-booking__info {
+  color: var(--color-text-light);
+  font-size: var(--confirmed-booking-info-size);
+  margin-bottom: var(--confirmed-booking-info-margin);
+  font-family: var(--font-secondary);
+  line-height: 1.5;
+}
+
+.confirmed-booking__button {
+  min-width: var(--confirmed-booking-button-min-width);
+  font-weight: var(--font-weight-semibold);
+}
+
+.confirmed-booking__button[type="primary"] {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-text);
+}
+
+.confirmed-booking__button[type="primary"]:hover,
+.confirmed-booking__button[type="primary"]:focus {
+  background: var(--color-primary-hover);
+  border-color: var(--color-primary-hover);
+}
+
+@media (max-width: 768px) {
+  .confirmed-booking {
+    --confirmed-booking-padding: var(--spacing-md);
+    --confirmed-booking-card-padding: var(--spacing-md);
+    --confirmed-booking-icon-size: 48px;
+    --confirmed-booking-message-size: 16px;
+  }
+}
+
+@media (max-width: 576px) {
+  .confirmed-booking {
+    --confirmed-booking-padding: var(--spacing-sm);
+    --confirmed-booking-card-padding: var(--spacing-sm);
+  }
+
+  .confirmed-booking__title {
+    font-size: 24px !important;
+  }
+}

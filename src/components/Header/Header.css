@@ -1,0 +1,108 @@
+.header {
+  --header-padding: 0 var(--spacing-lg);
+  --header-z-index: 1000;
+  --header-logo-max-height: 48px;
+  --header-logo-max-width: 160px;
+  --header-menu-icon-size: 28px;
+  --header-link-font-size: 20px;
+  --mobile-breakpoint: 980px;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--header-z-index);
+  background: var(--color-background);
+  padding: var(--header-padding);
+  width: 100%;
+  box-shadow: var(--shadow-light);
+}
+
+.header__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__menu-icon {
+  font-size: var(--header-menu-icon-size);
+  color: var(--color-text);
+}
+
+.header__logo {
+  height: auto;
+  max-height: var(--header-logo-max-height);
+  width: 100%;
+  max-width: var(--header-logo-max-width);
+  object-fit: contain;
+}
+
+.header .ant-menu.header__menu {
+  background: var(--color-background);
+  border-bottom: none;
+  font-weight: var(--font-weight-bold);
+  justify-content: flex-end;
+}
+
+.header .ant-menu-item.header__menu-item {
+  font-weight: var(--font-weight-bold);
+}
+
+.header__link {
+  color: var(--color-text);
+  font-weight: var(--font-weight-bold);
+  font-family: var(--font-secondary);
+  font-size: var(--header-link-font-size);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.header__link:hover,
+.header__link:focus {
+  color: var(--color-primary);
+}
+
+.header .ant-btn.header__mobile-menu-btn {
+  text-align: right;
+  background: transparent;
+  border: none;
+  color: var(--color-text);
+  padding: var(--spacing-xs);
+}
+
+.header .ant-btn.header__mobile-menu-btn:hover,
+.header .ant-btn.header__mobile-menu-btn:focus {
+  background: var(--color-background-alt);
+  color: var(--color-primary);
+}
+
+@media (max-width: 900px) {
+  .header {
+    --header-logo-max-width: 100px;
+    --header-logo-max-height: 40px;
+  }
+}
+
+@media (max-width: 980px) {
+  .header .ant-btn.header__mobile-menu-btn {
+    position: absolute;
+    top: var(--spacing-sm);
+    right: var(--spacing-lg);
+    z-index: calc(var(--header-z-index) + 100);
+    padding: 0;
+  }
+
+  .header__row {
+    position: relative;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    --header-padding: 0 var(--spacing-md);
+  }
+
+  .header__link {
+    font-size: 18px;
+  }
+}

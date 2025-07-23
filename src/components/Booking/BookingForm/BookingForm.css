@@ -1,0 +1,42 @@
+.booking-form {
+  --form-padding: var(--spacing-lg);
+  --form-border-radius: var(--border-radius-sm);
+  --input-padding: 10px;
+  --input-border-color: var(--color-border);
+
+  max-width: 600px;
+  margin: 0 auto;
+  padding: var(--form-padding);
+  background-color: var(--color-background-alt);
+  border-radius: var(--form-border-radius);
+  box-shadow: var(--shadow-medium);
+}
+
+.booking-form .ant-form-item-label > label {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+}
+
+.booking-form__input {
+  padding: var(--input-padding);
+  border: 1px solid var(--input-border-color);
+  border-radius: var(--border-radius-sm);
+}
+
+.booking-form__label {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+}
+
+.booking-form__submit-button {
+  background-color: var(--color-primary) !important;
+  border-color: var(--color-primary) !important;
+  color: var(--color-text) !important;
+  font-weight: var(--font-weight-semibold) !important;
+  min-width: 200px;
+}
+
+.booking-form__submit-button:hover {
+  background-color: var(--color-primary-hover) !important;
+  border-color: var(--color-primary-hover) !important;
+}

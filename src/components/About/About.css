@@ -1,0 +1,95 @@
+.about {
+  --about-padding: var(--spacing-xxl) var(--spacing-lg) var(--spacing-xl) var(--spacing-lg);
+  --about-title-size: 64px;
+  --about-subtitle-size: 40px;
+  --about-description-size: 18px;
+  --about-description-margin: var(--spacing-lg);
+  --about-images-wrapper-width: 340px;
+  --about-images-wrapper-height: 440px;
+  --about-image-size: 220px;
+
+  padding: var(--about-padding);
+  background: var(--color-background);
+}
+
+.about__title {
+  font-family: var(--font-primary) !important;
+  font-size: var(--about-title-size) !important;
+  color: var(--color-text) !important;
+}
+
+.about__subtitle {
+  font-family: var(--font-primary) !important;
+  font-size: var(--about-subtitle-size) !important;
+  color: var(--color-text) !important;
+}
+
+.about__description {
+  font-family: var(--font-secondary);
+  font-size: var(--about-description-size);
+  margin-top: var(--about-description-margin);
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+.about__images-col {
+  position: relative;
+  min-height: 320px;
+}
+
+.about__images-wrapper {
+  position: relative;
+  width: var(--about-images-wrapper-width);
+  height: var(--about-images-wrapper-height);
+  margin: 0 auto;
+  overflow: visible;
+}
+
+.about__image {
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-light);
+  position: absolute;
+  transition: all 0.3s ease;
+  width: var(--about-image-size);
+  height: var(--about-image-size);
+}
+
+.about__image:hover {
+  box-shadow: var(--shadow-medium);
+  transform: translateY(-4px);
+}
+
+.about__image--back {
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.about__image--front {
+  bottom: 0;
+  right: 0;
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .about {
+    --about-padding: var(--spacing-lg) var(--spacing-md);
+    --about-title-size: 48px;
+    --about-subtitle-size: 32px;
+    --about-description-size: 16px;
+    --about-images-wrapper-width: 280px;
+    --about-images-wrapper-height: 360px;
+    --about-image-size: 180px;
+  }
+}
+
+@media (max-width: 576px) {
+  .about {
+    --about-padding: var(--spacing-md) var(--spacing-sm);
+    --about-title-size: 36px;
+    --about-subtitle-size: 24px;
+    --about-images-wrapper-width: 240px;
+    --about-images-wrapper-height: 320px;
+    --about-image-size: 160px;
+  }
+}

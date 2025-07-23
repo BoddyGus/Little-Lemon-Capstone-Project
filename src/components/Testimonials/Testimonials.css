@@ -1,0 +1,83 @@
+.testimonials {
+  --testimonials-padding: var(--spacing-xxl) var(--spacing-lg) var(--spacing-xl) var(--spacing-lg);
+  --testimonials-title-margin: var(--spacing-xl);
+  --testimonials-card-min-height: 260px;
+  --testimonials-card-margin: var(--spacing-lg);
+  --testimonials-header-margin: var(--spacing-sm);
+  --testimonials-avatar-margin: var(--spacing-md);
+  --testimonials-name-size: 16px;
+  --testimonials-rate-size: 18px;
+  --testimonials-rate-margin: var(--spacing-md);
+  --testimonials-review-margin: var(--spacing-md);
+
+  background: var(--color-secondary);
+  padding: var(--testimonials-padding);
+}
+
+.testimonials__title {
+  text-align: center;
+  margin-bottom: var(--testimonials-title-margin);
+  color: var(--color-white) !important;
+  font-family: var(--font-primary) !important;
+}
+
+.testimonials__card {
+  border-radius: var(--border-radius-md);
+  min-height: var(--testimonials-card-min-height);
+  margin-bottom: var(--testimonials-card-margin);
+  background: var(--color-background);
+  box-shadow: var(--shadow-light);
+  transition: all 0.3s ease;
+}
+
+.testimonials__card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-medium);
+}
+
+.testimonials__header {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--testimonials-header-margin);
+}
+
+.testimonials__avatar {
+  margin-right: var(--testimonials-avatar-margin);
+}
+
+.testimonials__name {
+  font-size: var(--testimonials-name-size);
+  font-family: var(--font-secondary);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+}
+
+.testimonials__rate {
+  font-size: var(--testimonials-rate-size);
+  margin-bottom: var(--testimonials-rate-margin);
+}
+
+.testimonials__review {
+  margin-top: var(--testimonials-review-margin);
+  font-family: var(--font-secondary);
+  color: var(--color-text-light);
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .testimonials {
+    --testimonials-padding: var(--spacing-lg) var(--spacing-md);
+    --testimonials-card-min-height: 220px;
+  }
+}
+
+@media (max-width: 576px) {
+  .testimonials {
+    --testimonials-padding: var(--spacing-md) var(--spacing-sm);
+    --testimonials-card-min-height: 200px;
+  }
+
+  .testimonials__card {
+    margin-bottom: var(--spacing-md);
+  }
+}
