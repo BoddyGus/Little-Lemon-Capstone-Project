@@ -1,14 +1,12 @@
 .hero {
-  --hero-padding: var(--spacing-xxl) var(--spacing-lg) var(--spacing-xl) var(--spacing-lg);
   --hero-max-width: 1200px;
-  --hero-content-padding: 0 var(--spacing-lg);
   --hero-title-margin: 20px;
   --hero-button-margin-top: 70px;
   --hero-image-max-width: 320px;
   --hero-image-border-radius: var(--border-radius-sm);
 
-  background: var(--color-secondary);
-  padding: var(--hero-padding);
+  background: var(--color-secondary) !important;
+  padding: var(--spacing-xxl) var(--spacing-lg) var(--spacing-xl) var(--spacing-lg);
 }
 
 .hero__row {
@@ -17,43 +15,42 @@
 }
 
 .hero__content {
-  padding: var(--hero-content-padding);
+  padding: 0 var(--spacing-lg);
 }
 
-
 .hero .hero__title {
-  color: var(--color-primary);
-  font-family: var(--font-primary);
-  font-size: 64px;
-  margin-top: var(--hero-title-margin);
-  margin-bottom: var(--hero-title-margin);
+  color: var(--color-primary) !important;
+  font-family: var(--font-primary) !important;
+  font-size: 64px !important;
+  margin-top: var(--hero-title-margin) !important;
+  margin-bottom: var(--hero-title-margin) !important;
 }
 
 .hero .hero__subtitle {
-  color: var(--color-white);
-  font-family: var(--font-primary);
-  font-size: 40px;
+  color: var(--color-white) !important;
+  font-family: var(--font-primary) !important;
+  font-size: 40px !important;
 }
 
 .hero .hero__paragraph {
-  color: var(--color-white);
-  font-family: var(--font-secondary);
-  font-size: 16px;
+  color: var(--color-white) !important;
+  font-family: var(--font-secondary) !important;
+  font-size: 16px !important;
 }
 
 .hero .ant-btn.hero__button {
-  background: var(--color-primary);
-  color: var(--color-black);
-  border-radius: var(--hero-image-border-radius);
-  margin-top: var(--hero-button-margin-top);
-  border: none;
-  font-weight: var(--font-weight-semibold);
+  background: var(--color-primary) !important;
+  color: var(--color-black) !important;
+  border-radius: var(--hero-image-border-radius) !important;
+  margin-top: var(--hero-button-margin-top) !important;
+  border: none !important;
+  font-weight: var(--font-weight-semibold) !important;
 }
 
 .hero .ant-btn.hero__button:hover,
 .hero .ant-btn.hero__button:focus {
-  background: var(--color-primary-hover);
-  color: var(--color-black);
+  background: var(--color-primary-hover) !important;
+  color: var(--color-black) !important;
 }
 
 .hero__image-col {
@@ -79,11 +76,11 @@
   }
 
   .hero .hero__title {
-    font-size: 48px;
+    font-size: 48px !important;
   }
 
   .hero .hero__subtitle {
-    font-size: 32px;
+    font-size: 32px !important;
   }
 
   .hero__image {
@@ -93,17 +90,16 @@
 
 @media (max-width: 767px) {
   .hero {
-    --hero-content-padding: 0 var(--spacing-sm);
     padding: var(--spacing-xl) 0;
-  }
-
-  .hero__row {
-    flex-direction: column;
   }
 
   .hero__content {
     text-align: center;
-    padding: var(--hero-content-padding);
+    padding: 0 var(--spacing-sm);
+  }
+
+  .hero__row {
+    flex-direction: column;
   }
 
   .hero__image-col {
@@ -111,10 +107,10 @@
   }
 
   .hero .hero__title {
-    font-size: 36px;
+    font-size: 36px !important;
   }
 
   .hero .hero__subtitle {
-    font-size: 24px;
+    font-size: 24px !important;
   }
 }

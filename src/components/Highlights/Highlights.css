@@ -1,19 +1,16 @@
 .highlights {
-  --highlights-padding: var(--spacing-xxl) var(--spacing-lg) var(--spacing-xl) var(--spacing-lg);
-  --highlights-header-margin: var(--spacing-xl);
   --highlights-card-min-height: 420px;
   --highlights-card-border-radius: var(--border-radius-md);
   --highlights-image-height: 200px;
   --highlights-image-aspect-ratio: 4 / 3;
-  --highlights-dish-name-size: 20px;
+  --highlights-dish-name-size: 24px;
   --highlights-dish-price-size: 18px;
-  --highlights-description-margin: var(--spacing-md) 0 var(--spacing-lg) 0;
 
-  padding: var(--highlights-padding);
+  padding: var(--spacing-xxl) var(--spacing-lg) var(--spacing-xl) var(--spacing-lg);
 }
 
 .highlights__header {
-  margin-bottom: var(--highlights-header-margin);
+  margin-bottom: var(--spacing-xl);
 }
 
 .highlights__title {
@@ -73,13 +70,13 @@
 .highlights__dish-name {
   font-size: var(--highlights-dish-name-size) !important;
   font-family: var(--font-primary) !important;
-  font-weight: var(--font-weight-semibold) !important;
+  font-weight: var(--font-weight-bold) !important;
   color: var(--color-text) !important;
   margin: 0 !important;
 }
 
 .highlights__dish-price {
-  color: var(--color-secondary) !important;
+  color: #495E57 !important; /* Hardcoded since var(--color-secondary) wasn't working */
   font-weight: var(--font-weight-semibold) !important;
   font-size: var(--highlights-dish-price-size) !important;
   font-family: var(--font-secondary) !important;
@@ -87,7 +84,7 @@
 }
 
 .highlights__description {
-  margin: var(--highlights-description-margin);
+  margin: var(--spacing-md) 0 var(--spacing-lg) 0;
   padding: 0 var(--spacing-md);
   flex: 1;
   font-family: var(--font-secondary) !important;
@@ -123,15 +120,15 @@
 
 @media (max-width: 768px) {
   .highlights {
-    --highlights-padding: var(--spacing-lg) 0;
     --highlights-card-min-height: 360px;
     --highlights-image-height: 160px;
+
+    padding: var(--spacing-lg) 0;
   }
 }
 
 @media (max-width: 576px) {
   .highlights {
-    --highlights-header-margin: var(--spacing-md);
     --highlights-card-min-height: 320px;
     --highlights-image-height: 120px;
   }
@@ -139,7 +136,7 @@
   .highlights__header {
     flex-direction: column;
     gap: var(--spacing-md);
-    margin-bottom: var(--highlights-header-margin);
+    margin-bottom: var(--spacing-md);
   }
 
   .highlights__card {

@@ -1,13 +1,11 @@
 .booking-page {
   --booking-page-max-width: 600px;
-  --booking-page-padding: var(--spacing-xl) var(--spacing-lg);
-  --booking-page-padding-top: 100px;
   --booking-page-title-size: 2.5rem;
-  --booking-page-title-margin: var(--spacing-xl);
+  --booking-page-padding-top: 100px;
 
   max-width: var(--booking-page-max-width);
   margin: 0 auto;
-  padding: var(--booking-page-padding);
+  padding: var(--spacing-xl) var(--spacing-lg);
   padding-top: var(--booking-page-padding-top);
   text-align: center;
 }
@@ -15,24 +13,34 @@
 .booking-page h1 {
   font-size: var(--booking-page-title-size);
   color: var(--color-text);
-  margin-bottom: var(--booking-page-title-margin);
+  margin-bottom: var(--spacing-xl);
   font-weight: var(--font-weight-bold);
   font-family: var(--font-primary);
 }
 
 @media (max-width: 768px) {
   .booking-page {
-    --booking-page-padding: var(--spacing-lg) var(--spacing-md);
-    --booking-page-padding-top: 80px;
     --booking-page-title-size: 2rem;
-    --booking-page-title-margin: var(--spacing-lg);
+    --booking-page-padding-top: 80px;
+
+    padding: var(--spacing-lg) var(--spacing-md);
+    padding-top: var(--booking-page-padding-top);
+  }
+
+  .booking-page h1 {
+    margin-bottom: var(--spacing-lg);
   }
 }
 
 @media (max-width: 576px) {
   .booking-page {
-    --booking-page-padding: var(--spacing-md) var(--spacing-sm);
     --booking-page-title-size: 1.75rem;
-    --booking-page-title-margin: var(--spacing-md);
+
+    padding: var(--spacing-md) var(--spacing-sm);
+    padding-top: var(--booking-page-padding-top);
+  }
+
+  .booking-page h1 {
+    margin-bottom: var(--spacing-md);
   }
 }
