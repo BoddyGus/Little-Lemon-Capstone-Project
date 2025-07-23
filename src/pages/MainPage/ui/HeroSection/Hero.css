@@ -7,6 +7,7 @@
 
   background: var(--color-secondary) !important;
   padding: var(--spacing-xxl) var(--spacing-lg) var(--spacing-xl) var(--spacing-lg);
+  padding-top: 120px;
 }
 
 .hero__row {
@@ -73,6 +74,8 @@
   .hero {
     --hero-image-max-width: 220px;
     --hero-button-margin-top: 40px;
+
+    padding-top: 100px;
   }
 
   .hero .hero__title {
@@ -91,6 +94,7 @@
 @media (max-width: 767px) {
   .hero {
     padding: var(--spacing-xl) 0;
+    padding-top: 90px;
   }
 
   .hero__content {
@@ -112,5 +116,30 @@
 
   .hero .hero__subtitle {
     font-size: 24px !important;
+  }
+}
+
+@media (max-width: 375px) {
+  .hero {
+    padding-top: 80px;
+    padding-bottom: var(--spacing-lg);
+  }
+
+  .hero .hero__title {
+    font-size: 32px !important;
+    margin-top: var(--spacing-sm) !important;
+  }
+
+  .hero .hero__subtitle {
+    font-size: 20px !important;
+  }
+
+  .hero .hero__paragraph {
+    font-size: 14px !important;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .hero .ant-btn.hero__button {
+    margin-top: var(--spacing-lg) !important;
   }
 }
