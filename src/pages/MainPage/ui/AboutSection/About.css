@@ -1,14 +1,12 @@
 .about {
-  --about-padding: var(--spacing-xxl) var(--spacing-lg) var(--spacing-xl) var(--spacing-lg);
   --about-title-size: 64px;
   --about-subtitle-size: 40px;
   --about-description-size: 18px;
-  --about-description-margin: var(--spacing-lg);
   --about-images-wrapper-width: 340px;
   --about-images-wrapper-height: 440px;
   --about-image-size: 220px;
 
-  padding: var(--about-padding);
+  padding: var(--spacing-xxl) var(--spacing-lg) var(--spacing-xl) var(--spacing-lg);
   background: var(--color-background);
 }
 
@@ -27,7 +25,7 @@
 .about__description {
   font-family: var(--font-secondary);
   font-size: var(--about-description-size);
-  margin-top: var(--about-description-margin);
+  margin-top: var(--spacing-lg);
   color: var(--color-text);
   line-height: 1.6;
 }
@@ -42,7 +40,7 @@
   width: var(--about-images-wrapper-width);
   height: var(--about-images-wrapper-height);
   margin: 0 auto;
-  overflow: visible;
+  overflow: hidden;
 }
 
 .about__image {
@@ -73,23 +71,76 @@
 
 @media (max-width: 768px) {
   .about {
-    --about-padding: var(--spacing-lg) var(--spacing-md);
     --about-title-size: 48px;
     --about-subtitle-size: 32px;
     --about-description-size: 16px;
     --about-images-wrapper-width: 280px;
-    --about-images-wrapper-height: 360px;
-    --about-image-size: 180px;
+    --about-images-wrapper-height: 300px;
+    --about-image-size: 160px;
+
+    padding: var(--spacing-lg) var(--spacing-md);
+  }
+
+  .about__images-col {
+    min-height: 280px;
   }
 }
 
 @media (max-width: 576px) {
   .about {
-    --about-padding: var(--spacing-md) var(--spacing-sm);
     --about-title-size: 36px;
     --about-subtitle-size: 24px;
     --about-images-wrapper-width: 240px;
-    --about-images-wrapper-height: 320px;
-    --about-image-size: 160px;
+    --about-images-wrapper-height: 240px;
+    --about-image-size: 120px;
+
+    padding: var(--spacing-md) var(--spacing-sm);
+  }
+
+  .about__images-col {
+    min-height: 220px;
+    margin-top: var(--spacing-lg);
+  }
+
+  .about__images-wrapper {
+    overflow: hidden;
+  }
+
+
+  .about__image--back {
+    top: 10px;
+    left: 10px;
+  }
+
+  .about__image--front {
+    bottom: 10px;
+    right: 10px;
+  }
+}
+
+
+/* Add this to the iPhone SE breakpoint */
+@media (max-width: 375px) {
+  .about__images-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    height: auto;
+    width: 100%;
+  }
+
+  .about__image {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+  }
+
+  .about__image--back,
+  .about__image--front {
+    top: auto;
+    bottom: auto;
+    left: auto;
+    right: auto;
   }
 }
