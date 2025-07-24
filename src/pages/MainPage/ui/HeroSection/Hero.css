@@ -1,22 +1,26 @@
 .hero {
-  --hero-max-width: 1200px;
   --hero-title-margin: 20px;
   --hero-button-margin-top: 70px;
-  --hero-image-max-width: 320px;
+  --hero-image-max-width: 100%;
   --hero-image-border-radius: var(--border-radius-sm);
 
   background: var(--color-secondary) !important;
-  padding: var(--spacing-xxl) var(--spacing-lg) var(--spacing-xl) var(--spacing-lg);
+  padding: var(--spacing-xxl) 0 var(--spacing-xl) 0;
   padding-top: 120px;
 }
 
 .hero__row {
   max-width: var(--hero-max-width);
   margin: 0 auto;
+  min-height: 400px;
 }
 
 .hero__content {
   padding: 0 var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
 }
 
 .hero .hero__title {
@@ -46,6 +50,7 @@
   margin-top: var(--hero-button-margin-top) !important;
   border: none !important;
   font-weight: var(--font-weight-semibold) !important;
+  align-self: flex-start;
 }
 
 .hero .ant-btn.hero__button:hover,
@@ -55,24 +60,23 @@
 }
 
 .hero__image-col {
-  text-align: right;
   display: flex;
-  align-items: flex-start;
-  justify-content: flex-end;
+  align-items: center;
+  justify-content: center;
+  padding: 0 var(--spacing-lg);
 }
 
 .hero__image {
   border-radius: var(--hero-image-border-radius);
-  margin-top: var(--hero-title-margin);
   max-width: var(--hero-image-max-width);
   width: 100%;
   height: auto;
   box-shadow: var(--shadow-light);
+  object-fit: cover;
 }
 
 @media (max-width: 991px) {
   .hero {
-    --hero-image-max-width: 220px;
     --hero-button-margin-top: 40px;
 
     padding-top: 100px;
@@ -86,8 +90,8 @@
     font-size: 32px !important;
   }
 
-  .hero__image {
-    max-width: var(--hero-image-max-width);
+  .hero__row {
+    min-height: 350px;
   }
 }
 
@@ -100,14 +104,17 @@
   .hero__content {
     text-align: center;
     padding: 0 var(--spacing-sm);
+    margin-bottom: var(--spacing-lg);
   }
 
   .hero__row {
     flex-direction: column;
+    min-height: auto;
   }
 
   .hero__image-col {
-    display: none;
+    margin-top: var(--spacing-lg);
+    padding: 0 var(--spacing-sm);
   }
 
   .hero .hero__title {
@@ -116,6 +123,10 @@
 
   .hero .hero__subtitle {
     font-size: 24px !important;
+  }
+
+  .hero .ant-btn.hero__button {
+    align-self: center;
   }
 }
 
