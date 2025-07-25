@@ -21,7 +21,7 @@
 
 .highlights__menu-link {
   color: var(--color-text) !important;
-  text-decoration: none !important;
+  text-decoration: underline !important;
   font-weight: var(--font-weight-bold) !important;
   font-family: var(--font-secondary) !important;
   font-size: 20px !important;
@@ -102,7 +102,7 @@
 .highlights__order-link {
   display: flex;
   align-items: center;
-  text-decoration: none !important;
+  text-decoration: underline !important;
   transition: all 0.3s ease;
 }
 
@@ -125,6 +125,7 @@
   vertical-align: middle;
   color: var(--color-text) !important;
   transition: color 0.3s ease;
+  margin-left: var(--spacing-xs);
 }
 
 .highlights__order-link:hover .highlights__order-icon {

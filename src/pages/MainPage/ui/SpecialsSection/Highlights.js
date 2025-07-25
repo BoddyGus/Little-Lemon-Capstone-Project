@@ -90,7 +90,6 @@ const Highlights = () => (
                     preview={false}
                     className="highlights__order-icon"
                     role="img"
-                    style={{ marginLeft: '8px' }}
                   />
                 </a>
               </Col>
