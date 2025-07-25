@@ -1,5 +1,5 @@
 import React from "react";
-import { Row, Col, Card, Typography, Button, Image } from "antd";
+import { Row, Col, Card, Typography, Image } from "antd";
 import "./Highlights.css";
 
 const { Title, Text, Paragraph } = Typography;
@@ -38,15 +38,16 @@ const Highlights = () => (
         </Title>
       </Col>
       <Col>
-        <Button
-          type="primary"
-          className="highlights__menu-btn"
-          aria-label="On Click"
+        <a
+          href="#menu"
+          className="highlights__menu-link"
+          aria-label="View our online menu"
         >
           Online Menu
-        </Button>
+        </a>
       </Col>
     </Row>
+
     <Row gutter={[24, 24]} align="stretch" wrap role="list" aria-label="Featured dishes">
       {dishes.map((dish) => (
         <Col xs={24} sm={12} md={8} key={dish.name} className="highlights__col">
@@ -76,23 +77,37 @@ const Highlights = () => (
             <Paragraph className="highlights__description">{dish.description}</Paragraph>
             <Row align="middle" gutter={8} className="highlights__order-row">
               <Col>
-                <Text strong className="highlights__order-text">Order a delivery</Text>
-              </Col>
-              <Col>
-                <Image
-                  src="CycleLogo.jpg"
-                  alt="Delivery bicycle icon"
-                  width={24}
-                  preview={false}
-                  className="highlights__order-icon"
-                  role="img"
-                />
+                <a
+                  href="#order-online"
+                  className="highlights__order-link"
+                  aria-label={`Order ${dish.name} for delivery`}
+                >
+                  <Text strong className="highlights__order-text">Order a delivery</Text>
+                  <Image
+                    src="CycleLogo.jpg"
+                    alt="Delivery bicycle icon"
+                    width={24}
+                    preview={false}
+                    className="highlights__order-icon"
+                    role="img"
+                  />
+                </a>
               </Col>
             </Row>
           </Card>
         </Col>
       ))}
     </Row>
+
+    <div className="highlights__menu-bottom">
+      <a
+        href="#menu"
+        className="highlights__menu-link"
+        aria-label="View our online menu"
+      >
+        Online Menu
+      </a>
+    </div>
   </section>
 );
 

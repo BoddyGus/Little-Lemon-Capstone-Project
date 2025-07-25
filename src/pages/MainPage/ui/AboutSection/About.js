@@ -23,25 +23,11 @@ const About = () => (
         </Paragraph>
       </Col>
       <Col xs={24} md={12} className="about__images-col">
-        <div
-          className="about__images-wrapper"
-          role="img"
-          aria-label="Restaurant atmosphere photos"
-        >
-          <Image
-            src="ds.jpg"
-            alt="Little Lemon restaurant interior showing dining atmosphere"
-            width={220}
-            height={220}
-            className="about__image about__image--front"
-            preview={false}
-          />
+        <div className="about__image-container">
           <Image
             src="dss.jpg"
             alt="Little Lemon restaurant kitchen and food preparation"
-            width={220}
-            height={220}
-            className="about__image about__image--back"
+            className="about__image"
             preview={false}
           />
         </div>
