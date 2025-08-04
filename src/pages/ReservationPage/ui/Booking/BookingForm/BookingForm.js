@@ -137,7 +137,6 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
               <Form.Item
                 label="Occasion"
                 name="occasion"
-                initialValue="Birthday"
               >
                 <Select
                   value={occasion}
